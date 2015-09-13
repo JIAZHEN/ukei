@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  root  to: "static_pages#home"
+
   resources :sessions
 
   match "/signin" => "sessions#new", via: "get"
