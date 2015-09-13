@@ -1,0 +1,41 @@
+// Place all the styles related to the sessions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+//colors
+$color_gallery_approx: #ededed;
+$color_quill_gray_approx: #d2d2d2;
+$color_celeste_approx: #cfcfcf;
+$white: #fff;
+
+.login-container {
+  padding: 25px;
+  position: fixed;
+}
+.form-login {
+  background-color: $color_gallery_approx;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 15px;
+  border-color: $color_quill_gray_approx;
+  border-width: 5px;
+  //Instead of the line below you could use @include box-shadow($shadow-1, $shadow-2, $shadow-3, $shadow-4, $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9, $shadow-10)
+  box-shadow: 0 1px 0 $color_celeste_approx;
+}
+h4 {
+  border: 0 solid $white;
+  border-bottom-width: 1px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+.form-control {
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 10px;
+}
+.wrapper {
+  text-align: center;
+  margin-top: 5%;
+}

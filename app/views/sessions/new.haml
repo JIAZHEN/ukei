@@ -1,0 +1,13 @@
+.login-container.container
+  .row
+    .col-md-offset-5.col-md-3
+      = render "shared/flash_messages"
+      = form_for(:session, :url => sessions_path, :html => { :class => "form-login"}) do |f|
+        %h4 Welcome back.
+        %input#userName.form-control.input-sm.chat-input{:name => "session[email]", :placeholder => "username", :type => "text"}/
+        %input#userPassword.form-control.input-sm.chat-input{:name => "session[password]", :placeholder => "password", :type => "text"}/
+        .wrapper
+          %span.group-btn
+            %button.btn.btn-primary.btn-md{:type => "submit"}
+              login
+              %i.fa.fa-sign-in
