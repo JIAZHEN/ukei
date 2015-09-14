@@ -1,4 +1,121 @@
 // Place all the styles related to the static_pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+//colors
+$color_celeste_approx: #ccc;
+$white: #fff;
 
+.contain-padding {
+  padding-right: 4%;
+  padding-left: 5%;
+}
+
+ul.nav {
+  float: right;
+  a {
+    color: #2b789e;
+  }
+
+  &.navbar-nav>li>a {
+    color: #2b789e;
+  }
+}
+
+.dropdown-submenu {
+  &.pull-left {
+    float: none;
+  }
+  &:hover>.dropdown-menu {
+    display: block;
+  }
+  &:hover>a:after {
+    border-left-color: $white;
+  }
+  &.pull-left>.dropdown-menu {
+    left: -100%;
+    margin-left: 10px;
+    //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+    border-radius: 6px 0 6px 6px;
+  }
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 80%;
+  left: 100%;
+  margin-top: -6px;
+  //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: $color_celeste_approx;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+
+#banner {
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .content {
+    position: absolute;
+    bottom: 35%;
+
+    h1 {
+      font-weight: normal;
+      font-size: 4.882352941em;
+      line-height: 1.33em;
+
+      span {
+        background-color: rgba(255,255,255,0.8);
+        color: #000000;
+        padding: 5px;
+      }
+    }
+  }
+}
+
+.home-bg {
+  background-color: #F7F7F7;
+}
+
+#intro {
+  color: #444444;
+  font-size: 1.529411765em;
+  padding-top: 3%;
+  padding-bottom: 3%;
+}
+
+.footer {
+  line-height: 1.6;
+  background-color: #E8E8E8;
+  padding-top: 2%;
+  ul {
+    padding-left: 0;
+    list-style: none;
+  }
+}
+
+.footer_copy {
+  line-height: 1.6;
+  background: #f7f7f7;
+  font-size: larger;
+  padding-top: 1%;
+
+  ul {
+    padding-left: 0;
+    list-style: none;
+    li {
+      margin-right: 2%;
+      display: inline;
+    }
+  }
+}
