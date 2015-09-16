@@ -11,6 +11,8 @@ gem "turbolinks"
 gem "jbuilder", "~> 2.0"
 gem "bcrypt-ruby"
 gem "font-awesome-rails"
+gem "awesome_nested_set"
+gem "google-webfonts"
 
 group :development, :test do
   gem "mysql2"

@@ -11,7 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150913141111) do
+ActiveRecord::Schema.define(version: 20150916214331) do
+
+  create_table "categories", force: true do |t|
+    t.string   "name",       limit: 255
+    t.integer  "lft",        limit: 4
+    t.integer  "rgt",        limit: 4
+    t.integer  "parent_id",  limit: 4
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  add_index "categories", ["lft"], name: "index_categories_on_lft", using: :btree
+  add_index "categories", ["name"], name: "index_categories_on_name", using: :btree
+  add_index "categories", ["parent_id"], name: "index_categories_on_parent_id", using: :btree
+  add_index "categories", ["rgt"], name: "index_categories_on_rgt", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "name",            limit: 255

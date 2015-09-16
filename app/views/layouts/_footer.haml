@@ -6,21 +6,23 @@
           %li
             %h5 CONTACT US
           %li
-            info@ukei.com
+            %a{:href => "mailto:info@ukei.com", :title => "Send an e-mail to UKEI"} info@ukei.com
+
 
       .col-lg-4.col-md-6
         %ul
           %li
             %h5 LOCATION
-          %li
-            info@ukei.com
+          %li= link_to "London"
+          %li= link_to "Kent"
 
       .col-lg-4.col-md-6
         %ul
           %li
             %h5 CONNECT
-          %li
-            info@ukei.com
+          %li= link_to "Wechat"
+          %li= link_to "Weibo"
+          %li= link_to "Facebook"
 
 .footer_copy
   .contain-padding
