@@ -64,7 +64,7 @@ ul.nav.navbar-nav {
   margin-right: -10px;
 }
 
-#banner {
+.banner {
   img {
     max-width: 100%;
     height: auto;
@@ -73,6 +73,14 @@ ul.nav.navbar-nav {
   .content {
     position: absolute;
     bottom: 15%;
+
+    h2 {
+      span {
+        background-color: rgba(255,255,255,0.8);
+        color: #444444;
+        padding: 5px;
+      }
+    }
 
     h1 {
       font-weight: normal;
@@ -92,9 +100,25 @@ ul.nav.navbar-nav {
   background-color: #F7F7F7;
 }
 
-#intro {
+.intro {
   color: #444444;
   font-size: 30px;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  line-height: 1.6;
+}
+
+.text-detail {
+  color: #000000;
+  font-size: 20px;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  line-height: 1.6;
+}
+
+.text-normal {
+  color: #000000;
+  font-size: 18px;
   padding-top: 3%;
   padding-bottom: 3%;
   line-height: 1.6;

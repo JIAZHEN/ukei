@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   match "/signin" => "sessions#new", via: "get"
   match "/signout" => "sessions#destroy", via: "delete"
+  get "location/:area" => "static_pages#location", as: :location
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

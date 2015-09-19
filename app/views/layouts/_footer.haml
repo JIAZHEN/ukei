@@ -12,9 +12,9 @@
       .col-lg-4.col-md-6
         %ul
           %li
-            %h5 LOCATION
-          %li= link_to "London"
-          %li= link_to "Kent"
+            %h5= link_to "LOCATION"
+          %li= link_to "London", location_path("london")
+          %li= link_to "Kent", location_path("kent")
 
       .col-lg-4.col-md-6
         %ul
