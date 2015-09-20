@@ -1,12 +1,13 @@
 class SessionsController < ApplicationController
   def new
+    signed_in? ? redirect_to(root_path) : render(:layout => false)
   end
 
   def create
     user = User.find_by_email(params[:session][:email].downcase)
     if user && user.authenticate(params[:session][:password])
       sign_in user
-      redirect_to "https://google.com"
+      redirect_to root_path
     else
       flash.now[:danger] = "Invalid email/password combination"
       render "new"
@@ -15,6 +16,6 @@ class SessionsController < ApplicationController
 
   def destroy
     sign_out
-    redirect_to posts_path
+    redirect_to root_path
   end
 end

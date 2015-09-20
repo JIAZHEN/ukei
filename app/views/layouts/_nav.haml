@@ -30,3 +30,5 @@
                             %li= link_to second_tier.name.upcase
 
         %li= link_to "CONTACT", contact_path
+        - if signed_in?
+          %li= link_to "LOGOUT", signout_path, method: "delete"
