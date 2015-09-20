@@ -18,14 +18,14 @@
               %a.dropdown-toggle{"data-toggle" => "dropdown"}
                 = category.name.upcase
                 %span.caret
-                %ul.dropdown-menu.dropdown-size{"aria-labelledby" => "dropdownMenu"}
+                %ul.dropdown-menu{"aria-labelledby" => "dropdownMenu"}
                   - category.children.each do |top_tier|
                     - if top_tier.children.empty?
                       %li= link_to top_tier.name.upcase
                     - else
                       %li.dropdown-submenu.dropdown-menu-right
                         = top_tier.name.upcase
-                        %ul.dropdown-menu.dropdown-hover.dropdown-size{"aria-labelledby" => "category_#{category.id}"}
+                        %ul.dropdown-menu.dropdown-hover{"aria-labelledby" => "category_#{category.id}"}
                           - top_tier.children.each do |second_tier|
                             %li= link_to second_tier.name.upcase
 
