@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :sessions
 
   match "/signin" => "sessions#new", via: "get"
+  match "/contact" => "static_pages#contact", via: "get"
   match "/signout" => "sessions#destroy", via: "delete"
   get "location/:area" => "static_pages#location", as: :location
 

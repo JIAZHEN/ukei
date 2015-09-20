@@ -6,7 +6,7 @@
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
-      %a.navbar-brand{:href => "#"}
+      %a.navbar-brand{:href => root_path}
         = image_tag("logo-livework.svg")
     .collapse.navbar-collapse
       %ul.nav.navbar-nav
@@ -29,3 +29,4 @@
                           - top_tier.children.each do |second_tier|
                             %li= link_to second_tier.name.upcase
 
+        %li= link_to "CONTACT", contact_path

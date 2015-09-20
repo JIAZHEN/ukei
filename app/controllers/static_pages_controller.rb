@@ -5,4 +5,8 @@ class StaticPagesController < ApplicationController
   def location
     @area = params[:area]
   end
+
+  def contact
+
+  end
 end

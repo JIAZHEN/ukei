@@ -46,8 +46,16 @@ ul.nav.navbar-nav {
     height: auto;
   }
 
-  .content {
+  .content-position {
     position: absolute;
+  }
+
+  .content-text-position {
+    padding-top: 15%;
+    padding-bottom: 10%;
+  }
+
+  .content {
     bottom: 15%;
 
     h2 {

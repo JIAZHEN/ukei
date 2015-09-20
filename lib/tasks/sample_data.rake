@@ -6,7 +6,7 @@ namespace :db do
                  password: "password",
                  password_confirmation: "password")
 
-    categories = ["sectors", "services", "china desk", "join us", "partner", "about us", "contact"].map do |name|
+    categories = ["sectors", "services", "china desk", "join us", "partner", "about us"].map do |name|
       Category.create!(name: name)
     end
 
