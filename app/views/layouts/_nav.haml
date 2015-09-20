@@ -11,13 +11,21 @@
     .collapse.navbar-collapse
       %ul.nav.navbar-nav
         - @categories.each do |category|
-          %li
-            %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
-              = category.name.upcase
-              - unless category.descendants.empty?
-                %b.caret
-            - unless category.descendants.empty?
-              %ul.dropdown-menu.multi-level
-                - category.descendants.each do |descendant|
-                  %li
-                    %a{:href => "#"}= descendant.name.upcase
+          - if category.descendants.empty?
+            %li= link_to category.name.upcase
+          - else
+            %li.dropdown-hover
+              %a.dropdown-toggle{"data-toggle" => "dropdown"}
+                = category.name.upcase
+                %span.caret
+                %ul.dropdown-menu{"aria-labelledby" => "dropdownMenu"}
+                  - category.descendants.each do |top_tier|
+                    - if top_tier.descendants.empty?
+                      %li= link_to top_tier.name.upcase
+                    - else
+                      %li.dropdown-submenu.dropdown-menu-right
+                        = top_tier.name.upcase
+                        %ul.dropdown-menu.dropdown-hover{"aria-labelledby" => "category_#{category.id}"}
+                          - top_tier.descendants.each do |second_tier|
+                            %li= link_to second_tier.name.upcase
+
