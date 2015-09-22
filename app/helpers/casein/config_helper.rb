@@ -8,7 +8,7 @@ module Casein
 
     # Filename of logo image. Ideally, it should be a transparent PNG around 140x30px
     def casein_config_logo
-      'casein/casein.png'
+      'rsg-logo-admin.jpg'
     end
 
     # The server hostname where Casein will run
@@ -28,7 +28,7 @@ module Casein
     # The initial page the user is shown after they sign in or click the logo. Probably this should be set to the first tab.
     # Do not point this at casein/index!
     def casein_config_dashboard_url
-      url_for :controller => :casein, :action => :blank
+      url_for casein_categories_path
     end
 
     # A list of stylesheets to include. Do not remove the core casein/casein, but you can change the load order, if required.
