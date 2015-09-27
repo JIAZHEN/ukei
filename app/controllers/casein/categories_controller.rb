@@ -21,6 +21,7 @@ module Casein
     def new
       @casein_page_title = "Add a new category"
     	@category = Category.new
+      @categories = Category.all
     end
 
     def create
