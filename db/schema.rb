@@ -11,7 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150916214331) do
+ActiveRecord::Schema.define(version: 20150922211204) do
+
+  create_table "casein_admin_users", force: true do |t|
+    t.string   "login",               limit: 255,             null: false
+    t.string   "name",                limit: 255
+    t.string   "email",               limit: 255
+    t.integer  "access_level",        limit: 4,   default: 0, null: false
+    t.string   "crypted_password",    limit: 255,             null: false
+    t.string   "password_salt",       limit: 255,             null: false
+    t.string   "persistence_token",   limit: 255
+    t.string   "single_access_token", limit: 255
+    t.string   "perishable_token",    limit: 255
+    t.integer  "login_count",         limit: 4,   default: 0, null: false
+    t.integer  "failed_login_count",  limit: 4,   default: 0, null: false
+    t.datetime "last_request_at"
+    t.datetime "current_login_at"
+    t.datetime "last_login_at"
+    t.string   "current_login_ip",    limit: 255
+    t.string   "last_login_ip",       limit: 255
+    t.string   "time_zone",           limit: 255
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "categories", force: true do |t|
     t.string   "name",       limit: 255

@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
 
+	#Casein routes
+	namespace :casein do
+		resources :categories
+	end
+
+
   root  to: "static_pages#home"
 
-  resources :sessions
-
-  match "/signin" => "sessions#new", via: "get"
   match "/contact" => "static_pages#contact", via: "get"
-  match "/signout" => "sessions#destroy", via: "delete"
   get "location/:area" => "static_pages#location", as: :location
 
   # The priority is based upon order of creation: first created -> highest priority.

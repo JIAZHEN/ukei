@@ -5,8 +5,6 @@ class ApplicationController < ActionController::Base
 
   before_action :load_categories
 
-  include SessionsHelper
-
   def load_categories
     @categories = Category.where(:parent_id => nil).all
   end

@@ -14,6 +14,8 @@ gem "font-awesome-rails"
 gem "awesome_nested_set"
 gem "google-webfonts"
 
+gem "casein"
+
 group :development, :test do
   gem "mysql2"
   gem "byebug"
