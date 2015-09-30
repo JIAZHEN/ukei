@@ -15,6 +15,7 @@ gem "awesome_nested_set"
 gem "google-webfonts"
 
 gem "casein"
+gem "paperclip"
 
 group :development, :test do
   gem "mysql2"

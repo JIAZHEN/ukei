@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150930081229) do
+ActiveRecord::Schema.define(version: 20150930141720) do
 
   create_table "casein_admin_users", force: true do |t|
     t.string   "login",               limit: 255,             null: false
@@ -50,11 +50,15 @@ ActiveRecord::Schema.define(version: 20150930081229) do
   add_index "categories", ["rgt"], name: "index_categories_on_rgt", using: :btree
 
   create_table "page_contents", force: true do |t|
-    t.string   "name",       limit: 255
-    t.string   "image",      limit: 255
-    t.text     "context",    limit: 65535
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.string   "name",               limit: 255
+    t.string   "image",              limit: 255
+    t.text     "context",            limit: 65535
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+    t.string   "image_file_name",    limit: 255
+    t.string   "image_content_type", limit: 255
+    t.integer  "image_file_size",    limit: 4
+    t.datetime "image_updated_at"
   end
 
   add_index "page_contents", ["name"], name: "index_page_contents_on_name", using: :btree

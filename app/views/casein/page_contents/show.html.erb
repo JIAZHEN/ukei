@@ -2,10 +2,10 @@
 
 <h2>View page content</h2>
 
-<%= form_for @page_content, :url => casein_page_content_path(@page_content) do |f| %>
+<%= form_for @page_content, :url => casein_page_content_path(@page_content), :html => { multipart: true } do |f| %>
 
 	<%= render :partial => 'casein/page_contents/form', :locals => { :f => f } %>
-	
+
 	<p class="submits">
 	  	<%= link_to 'Cancel', casein_page_contents_path, :class => 'btn btn-mini btn-danger' %>
 		<%= f.submit "Save changes", :class => "btn btn-mini btn-primary" %>
