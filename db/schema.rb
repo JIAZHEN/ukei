@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150922211204) do
+ActiveRecord::Schema.define(version: 20150930081229) do
 
   create_table "casein_admin_users", force: true do |t|
     t.string   "login",               limit: 255,             null: false
@@ -49,17 +49,14 @@ ActiveRecord::Schema.define(version: 20150922211204) do
   add_index "categories", ["parent_id"], name: "index_categories_on_parent_id", using: :btree
   add_index "categories", ["rgt"], name: "index_categories_on_rgt", using: :btree
 
-  create_table "users", force: true do |t|
-    t.string   "name",            limit: 255
-    t.string   "email",           limit: 255
-    t.string   "password_digest", limit: 255
-    t.string   "remember_token",  limit: 255
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+  create_table "page_contents", force: true do |t|
+    t.string   "name",       limit: 255
+    t.string   "image",      limit: 255
+    t.text     "context",    limit: 65535
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", using: :btree
-  add_index "users", ["password_digest"], name: "index_users_on_password_digest", using: :btree
-  add_index "users", ["remember_token"], name: "index_users_on_remember_token", using: :btree
+  add_index "page_contents", ["name"], name: "index_page_contents_on_name", using: :btree
 
 end

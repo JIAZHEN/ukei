@@ -1,11 +1,6 @@
 namespace :db do
   desc "Fill database with sample data"
   task populate: :environment do
-    User.create!(name: "jiazhen",
-                 email: "jxie@example.com",
-                 password: "password",
-                 password_confirmation: "password")
-
     categories = ["sectors", "services", "china desk", "join us", "partner", "about us"].map do |name|
       Category.create!(name: name)
     end
@@ -42,4 +37,6 @@ namespace :db do
     end
 
   end
+
+  task :bootstrap => ["db:drop", "db:create", "db:migrate", "db:populate"]
 end
