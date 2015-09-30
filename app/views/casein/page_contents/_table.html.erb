@@ -9,11 +9,11 @@
 			<th>&nbsp;</th>
 		</tr>
 	</thead>
-	
+
 	<% page_contents.each do |page_content| %>
 		<tr>
 			<td><%= casein_table_cell_link page_content.name, casein_page_content_path(page_content) %></td>
-			<td><%= casein_table_cell_link page_content.image, casein_page_content_path(page_content) %></td>
+			<td><%= casein_table_cell_link image_tag(page_content.image.url(:medium)), casein_page_content_path(page_content) %></td>
 			<td><%= casein_table_cell_link page_content.context, casein_page_content_path(page_content) %></td>
 			<td class="delete">
 				<%= link_to(casein_show_row_icon("trash"), casein_page_content_path(page_content), :method => :delete, :data => { :confirm => "Are you sure you want to delete this page content?" }) %>
