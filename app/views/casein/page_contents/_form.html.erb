@@ -9,7 +9,7 @@
 		<%= casein_file_field f, f.object, nil, :image %>
 		<div class="well">
 			<label>Preview</label>
-			<%= image_tag(f.object.image.url(:medium)) %>
+			<%= image_tag(f.object.image.url(:medium), size: "64") %>
 		</div>
 	</div>
 </div>

@@ -2,21 +2,21 @@
 
 module Casein
   class PageContentsController < Casein::CaseinController
-  
+
     ## optional filters for defining usage according to Casein::AdminUser access_levels
     # before_filter :needs_admin, :except => [:action1, :action2]
     # before_filter :needs_admin_or_current_user, :only => [:action1, :action2]
-  
+
     def index
       @casein_page_title = 'Page contents'
   		@page_contents = PageContent.order(sort_order(:name)).paginate :page => params[:page]
     end
-  
+
     def show
       @casein_page_title = 'View page content'
       @page_content = PageContent.find params[:id]
     end
-  
+
     def new
       @casein_page_title = 'Add a new page content'
     	@page_content = PageContent.new
@@ -24,7 +24,7 @@ module Casein
 
     def create
       @page_content = PageContent.new page_content_params
-    
+
       if @page_content.save
         flash[:notice] = 'Page content created'
         redirect_to casein_page_contents_path
@@ -33,12 +33,12 @@ module Casein
         render :action => :new
       end
     end
-  
+
     def update
       @casein_page_title = 'Update page content'
-      
+
       @page_content = PageContent.find params[:id]
-    
+      @page_content.image.destroy if params[:page_content][:image]
       if @page_content.update_attributes page_content_params
         flash[:notice] = 'Page content has been updated'
         redirect_to casein_page_contents_path
@@ -47,7 +47,7 @@ module Casein
         render :action => :show
       end
     end
- 
+
     def destroy
       @page_content = PageContent.find params[:id]
 
@@ -55,9 +55,9 @@ module Casein
       flash[:notice] = 'Page content has been deleted'
       redirect_to casein_page_contents_path
     end
-  
+
     private
-      
+
       def page_content_params
         params.require(:page_content).permit(:name, :image, :context)
       end

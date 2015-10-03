@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150930141720) do
+ActiveRecord::Schema.define(version: 20151002074652) do
 
   create_table "casein_admin_users", force: true do |t|
     t.string   "login",               limit: 255,             null: false
@@ -40,6 +40,8 @@ ActiveRecord::Schema.define(version: 20150930141720) do
     t.integer  "lft",        limit: 4
     t.integer  "rgt",        limit: 4
     t.integer  "parent_id",  limit: 4
+    t.string   "image",      limit: 255
+    t.string   "context",    limit: 255
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end

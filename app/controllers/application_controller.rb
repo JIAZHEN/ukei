@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
   end
 
   def load_page_contents
-    page_contents = PageContent.where("name IN (?)", ["logo"]).all
-    @logo = page_contents[0]
+    page_contents = PageContent.where("name IN (?)", ["logo", "slogen"]).all
+    @logo, @slogen = page_contents
   end
 end
