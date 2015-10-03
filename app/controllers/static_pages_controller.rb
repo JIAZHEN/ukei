@@ -1,5 +1,5 @@
 class StaticPagesController < ApplicationController
-  before_action { page_contents("slogen") }
+  before_action { page_contents("logo", "slogen") }
 
   def home
   end

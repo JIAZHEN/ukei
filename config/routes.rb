@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :categories, only: [:show]
+
 	#Casein routes
 	namespace :casein do
 		resources :page_contents

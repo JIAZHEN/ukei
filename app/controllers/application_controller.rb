@@ -6,7 +6,6 @@ class ApplicationController < ActionController::Base
   before_action :load_categories
 
   def page_contents(*names)
-    names = names << "logo"
     contents = PageContent.where("name IN (?)", names).all
     contents.each { |content| instance_variable_set("@#{content.name}", content) }
   end

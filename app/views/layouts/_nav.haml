@@ -12,7 +12,7 @@
       %ul.nav.navbar-nav
         - @categories.each do |category|
           - if category.children.empty?
-            %li= link_to category.name.upcase
+            %li= link_to category.name.upcase, category_path(category)
           - else
             %li.dropdown-hover
               %a.dropdown-toggle{"data-toggle" => "dropdown"}
@@ -21,7 +21,7 @@
                 %ul.dropdown-menu
                   - category.children.each do |first_tier|
                     - if first_tier.children.empty?
-                      %li= link_to first_tier.name.upcase
+                      %li= link_to first_tier.name.upcase, category_path(first_tier)
                     - else
                       %li.dropdown-submenu.dropdown-menu-right
                         %a
@@ -29,6 +29,6 @@
                           %i.fa.fa-caret-right
                         %ul.dropdown-menu.dropdown-hover
                           - first_tier.children.each do |second_tier|
-                            %li= link_to second_tier.name.upcase
+                            %li= link_to second_tier.name.upcase, category_path(second_tier)
 
         %li= link_to "CONTACT", contact_path
