@@ -4,14 +4,14 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_action :load_categories
-  before_action :load_page_contents
+
+  def page_contents(*names)
+    names = names << "logo"
+    contents = PageContent.where("name IN (?)", names).all
+    contents.each { |content| instance_variable_set("@#{content.name}", content) }
+  end
 
   def load_categories
     @categories = Category.where(:parent_id => nil).all
-  end
-
-  def load_page_contents
-    page_contents = PageContent.where("name IN (?)", ["logo", "slogen"]).all
-    @logo, @slogen = page_contents
   end
 end

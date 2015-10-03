@@ -1,4 +1,6 @@
 class StaticPagesController < ApplicationController
+  before_action { page_contents("slogen") }
+
   def home
   end
 
