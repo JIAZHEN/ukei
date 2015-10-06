@@ -48,7 +48,7 @@ ul.nav.navbar-nav {
   }
 
   .content {
-    bottom: 15%;
+    bottom: 40%;
 
     h2 {
       span {
@@ -60,13 +60,13 @@ ul.nav.navbar-nav {
 
     h1 {
       font-weight: normal;
-      font-size: 79px;
+      font-size: 70px;
       line-height: 1.29em;
 
       span {
         background-color: rgba(255,255,255,0.8);
         color: #000000;
-        padding: 5px;
+        padding: 4px;
       }
     }
   }
@@ -86,7 +86,7 @@ ul.nav.navbar-nav {
 
 .text-detail {
   color: #000000;
-  font-size: 20px;
+  font-size: 18px;
   padding-top: 3%;
   padding-bottom: 3%;
   line-height: 1.6;
@@ -113,6 +113,9 @@ ul.nav.navbar-nav {
       padding-right: 22%;
       line-height: 3em;
       text-align: center;
+      a {
+        color: #333333;
+      }
     }
   }
 }
