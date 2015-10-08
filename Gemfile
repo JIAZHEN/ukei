@@ -16,6 +16,7 @@ gem "google-webfonts"
 
 gem "casein"
 gem "paperclip"
+gem "bootsy", :git => "git@github.com:volmer/bootsy.git"
 
 group :development, :test do
   gem "mysql2"

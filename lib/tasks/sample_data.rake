@@ -38,5 +38,9 @@ namespace :db do
 
   end
 
-  task :bootstrap => ["db:drop", "db:create", "db:migrate", "db:populate"]
+  task create_admin: :environment do
+    `rake casein:users:create_admin email=jxie@example.com password=password`
+  end
+
+  task :bootstrap => ["db:drop", "db:create", "db:migrate", "db:populate", "db:create_admin"]
 end
