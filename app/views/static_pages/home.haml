@@ -3,7 +3,7 @@
     = image_tag("london_from_a_hot_air_balloon.jpg")
     .content.content-position.contain-padding
       %h1
-        %span= @slogen.context
+        %span= @slogen.try(:content)
 
 .home-bg
   %section.intro
