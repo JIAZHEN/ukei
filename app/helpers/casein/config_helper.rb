@@ -41,5 +41,9 @@ module Casein
       %w[casein/casein casein/custom]
     end
 
+    def strip_casein_options options
+      options.reject {|key, value| key.to_s.include? "casein_" }
+    end
+
   end
 end
