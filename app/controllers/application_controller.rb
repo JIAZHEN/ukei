@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_action :load_categories
+  before_action :load_logo
 
   def page_contents(*names)
     contents = PageContent.where("name IN (?)", names).all
@@ -12,5 +13,9 @@ class ApplicationController < ActionController::Base
 
   def load_categories
     @categories = Category.where(:parent_id => nil).all
+  end
+
+  def load_logo
+    @logo = PageContent.find_by(:name => "logo")
   end
 end

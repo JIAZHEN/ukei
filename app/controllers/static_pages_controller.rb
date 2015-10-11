@@ -1,7 +1,6 @@
 class StaticPagesController < ApplicationController
-  before_action { page_contents("logo", "slogen") }
-
   def home
+    page_contents("slogen", "home_intro")
   end
 
   def location

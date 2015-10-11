@@ -3,13 +3,12 @@
     = image_tag("london_from_a_hot_air_balloon.jpg")
     .content.content-position.contain-padding
       %h1
-        %span= @slogen.try(:content)
+        %span= @slogen.context
 
 .home-bg
   %section.intro
     .contain-padding
-      %p
-        Welcome. Over the last 14 years we have pioneered service design and made a difference for customers and organisations. We merge creativity, design and business to help organisations deliver a great customer experience and achieve tangible business results.
+      %p= @home_intro.context
 
   %section#logo
     .contain-padding

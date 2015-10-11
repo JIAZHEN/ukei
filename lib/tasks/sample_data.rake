@@ -36,6 +36,9 @@ namespace :db do
       Category.create!(name: name).move_to_child_of(immigration)
     end
 
+    PageContent.create!(name: "slogen", context: "We design services for customers that have impact on business")
+    PageContent.create!(name: "home_intro", context: "Welcome. Over the last 14 years we have pioneered service design and made a difference for customers and organisations. We merge creativity, design and business to help organisations deliver a great customer experience and achieve tangible business results.")
+
   end
 
   task create_admin: :environment do
