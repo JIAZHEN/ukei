@@ -9,6 +9,11 @@ class StaticPagesController < ApplicationController
   end
 
   def contact
+  end
 
+  def terms
+  end
+
+  def privacy
   end
 end

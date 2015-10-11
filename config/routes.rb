@@ -9,10 +9,11 @@ Rails.application.routes.draw do
 		resources :categories
 	end
 
-
   root  to: "static_pages#home"
 
-  match "/contact" => "static_pages#contact", via: "get"
+  get "contact" => "static_pages#contact", as: :contact
+  get "privacy" => "static_pages#privacy", as: :privacy
+  get "terms" => "static_pages#terms", as: :terms
   get "location/:area" => "static_pages#location", as: :location
 
   # The priority is based upon order of creation: first created -> highest priority.
