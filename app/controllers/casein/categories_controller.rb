@@ -39,10 +39,13 @@ module Casein
     def update
       @casein_page_title = "Update category"
 
-      parent_category = Category.find category_params[:parent_id]
+      if category_params[:parent_id].present?
+        parent_category = Category.find category_params[:parent_id]
+      end
       @category = Category.find params[:id]
 
-      if @category.update_attributes(update_params) && @category.move_to_child_of(parent_category)
+      if @category.update_attributes(update_params)
+        @category.move_to_child_of(parent_category) if parent_category
         flash[:notice] = "Category has been updated"
         redirect_to casein_categories_path
       else

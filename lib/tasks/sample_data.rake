@@ -1,7 +1,7 @@
 namespace :db do
   desc "Fill database with sample data"
   task populate: :environment do
-    categories = ["sectors", "services" "join us", "about us"].map do |name|
+    categories = ["sectors", "services", "join us", "about us"].map do |name|
       Category.create!(name: name)
     end
 
@@ -18,8 +18,7 @@ namespace :db do
     [
       "immigration", "commercial law", "commercial contract", "intellecture property",
       "commercial dispute resolution", "corporate", "employment", "family",
-      "intellectual property", "it & telecommunication",
-      "real estate", "regulatory compliance"
+      "intellectual property", "real estate", "regulatory compliance"
     ].each do |name|
       Category.create!(name: name).move_to_child_of(services)
     end
