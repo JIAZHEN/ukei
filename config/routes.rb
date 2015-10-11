@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get "contact" => "static_pages#contact", as: :contact
   get "privacy" => "static_pages#privacy", as: :privacy
   get "terms" => "static_pages#terms", as: :terms
+  get "china_desk" => "static_pages#china_desk", as: :china_desk
   get "location/:area" => "static_pages#location", as: :location
 
   # The priority is based upon order of creation: first created -> highest priority.

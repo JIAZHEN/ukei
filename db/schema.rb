@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151008110714) do
+ActiveRecord::Schema.define(version: 20151011100846) do
 
   create_table "bootsy_image_galleries", force: true do |t|
     t.integer  "bootsy_resource_id",   limit: 4
@@ -51,13 +51,12 @@ ActiveRecord::Schema.define(version: 20151008110714) do
 
   create_table "categories", force: true do |t|
     t.string   "name",       limit: 255
+    t.text     "context",    limit: 65535
     t.integer  "lft",        limit: 4
     t.integer  "rgt",        limit: 4
     t.integer  "parent_id",  limit: 4
-    t.string   "image",      limit: 255
-    t.string   "context",    limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
   add_index "categories", ["lft"], name: "index_categories_on_lft", using: :btree

@@ -42,7 +42,6 @@ module Casein
       parent_category = Category.find category_params[:parent_id]
       @category = Category.find params[:id]
 
-
       if @category.update_attributes(update_params) && @category.move_to_child_of(parent_category)
         flash[:notice] = "Category has been updated"
         redirect_to casein_categories_path
@@ -67,7 +66,7 @@ module Casein
       end
 
       def update_params
-        params.require(:category).permit(:name)
+        params.require(:category).permit(:name, :context, :bootsy_image_gallery_id)
       end
 
   end

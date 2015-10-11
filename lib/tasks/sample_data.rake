@@ -1,13 +1,13 @@
 namespace :db do
   desc "Fill database with sample data"
   task populate: :environment do
-    categories = ["sectors", "services", "china desk", "join us", "partner", "about us"].map do |name|
+    categories = ["sectors", "services" "join us", "about us"].map do |name|
       Category.create!(name: name)
     end
 
     sectors = Category.find_by(name: "sectors")
     [
-      "it", "retail and e-commerce", "real estate", "hotels and restaurants",
+      "IT & Telecommunication", "retail and e-commerce", "real estate", "hotels and restaurants",
       "fashion", "pharmaceuticals", "health and care",
       "social housing", "education"
     ].each do |name|
@@ -16,7 +16,7 @@ namespace :db do
 
     services = Category.find_by(name: "services")
     [
-      "immigration", "business law", "commercial", "commercial property",
+      "immigration", "commercial law", "commercial contract", "intellecture property",
       "commercial dispute resolution", "corporate", "employment", "family",
       "intellectual property", "it & telecommunication",
       "real estate", "regulatory compliance"
@@ -38,7 +38,7 @@ namespace :db do
 
     PageContent.create!(name: "slogen", context: "We design services for customers that have impact on business")
     PageContent.create!(name: "home_intro", context: "Welcome. Over the last 14 years we have pioneered service design and made a difference for customers and organisations. We merge creativity, design and business to help organisations deliver a great customer experience and achieve tangible business results.")
-
+    PageContent.create!(name: "logo")
   end
 
   task create_admin: :environment do

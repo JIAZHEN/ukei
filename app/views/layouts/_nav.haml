@@ -30,5 +30,5 @@
                         %ul.dropdown-menu.dropdown-hover
                           - first_tier.children.each do |second_tier|
                             %li= link_to second_tier.name.upcase, category_path(second_tier)
-
+        %li= link_to "CHINA DESK", china_desk_path
         %li= link_to "CONTACT", contact_path

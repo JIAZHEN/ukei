@@ -3,20 +3,13 @@
     = image_tag("london_from_a_hot_air_balloon.jpg")
     .content.content-position.contain-padding
       %h1
-        %span Meet our team
+        %span= @category.name
 
 %section
   .contain-padding
     .row
-      .col-md-8
-        %p.text-detail
-          From Brandcell’s office, Livework’s Beirut partner, we deliver innovative solutions to our clients ever-changing challenges. Our studio Brandcell is located right in the heart of the city, steps away from the Beirut Financial District and the trendy Mar Mikhael area; and right across the street from the best falafel joint in the country. Let’s collaborate!
-
-        %h3
-          Arriving by plane:
-
-        %p.text-normal
-          It’s better to arrange for a pick up service with your hotel before travelling to Beirut, to avoid being preyed upon by eager taxi drivers at the arrival lounge. We’re a 20 minute car ride away, on the crossroad of “Damascus” and “Bechara Khoury”.
+      .col-md-8.text-detail
+        = @category.context.try(:html_safe)
 
       .col-md-4
         %h5
@@ -24,9 +17,9 @@
         %address
           %strong UKEI London
           %br/
-          795 Folsom Ave, Suite 600
+          44 Bishopsgate
           %br/
-          San Francisco, CA 94107
+          EC2N 4AJ, UK
           %br/
           %abbr{:title => "Phone"} P:
           (123) 456-7890
