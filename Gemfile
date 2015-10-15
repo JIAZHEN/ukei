@@ -19,7 +19,6 @@ gem "paperclip"
 gem "bootsy", :git => "git://github.com/volmer/bootsy.git"
 
 group :development, :test do
-  gem "mysql2"
   gem "byebug"
   gem "web-console", "~> 2.0"
   gem "spring"
