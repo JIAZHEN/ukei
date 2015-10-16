@@ -5,12 +5,10 @@
 #   gem 'sqlite3'
 #
 default: &default
-  adapter: mysql2
-  encoding: utf8
-  database: ukei_dev
+  adapter: postgresql
+  encoding: unicode
+  database: rsb_dev
   pool: 5
-  host: localhost
-  username: root
 
 development:
   <<: *default

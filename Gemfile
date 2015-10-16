@@ -17,13 +17,10 @@ gem "google-webfonts"
 gem "casein"
 gem "paperclip"
 gem "bootsy", :git => "git://github.com/volmer/bootsy.git"
+gem "pg"
 
 group :development, :test do
   gem "byebug"
   gem "web-console", "~> 2.0"
   gem "spring"
-end
-
-group :production do
-  gem "pg"
 end
