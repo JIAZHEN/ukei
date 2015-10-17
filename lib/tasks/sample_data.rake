@@ -7,10 +7,8 @@ namespace :db do
 
     services = Category.find_by(name: "Services")
     [
-      "Immigration", "Commercial Law", "Commercial Contracts", "Sourcing", "Intellectual Property",
-      "Commercial Dispute Resolution", "Corporate", "Mergers & Acquisitions", "Venture Capital & Private Equity",
-      "Equity Capital Markets", "Employment", "Family", "IT & E-commerce",
-      "Real Estate", "Regulatory Compliance"
+      "Immigration", "Commercial Law", "Commercial Dispute Resolution", "Corporate",
+      "Employment", "Family", "Real Estate"
     ].each do |name|
       Category.create!(name: name).move_to_child_of(services)
     end
