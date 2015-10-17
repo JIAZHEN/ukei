@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
   end
 
   def load_categories
-    @categories = Category.where(:parent_id => nil).all
+    @categories = Category.where(:parent_id => nil).order(:id => :asc).all
   end
 
   def load_logo

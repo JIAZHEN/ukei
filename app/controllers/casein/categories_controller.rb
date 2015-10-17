@@ -9,7 +9,7 @@ module Casein
 
     def index
       @casein_page_title = "Categories"
-  		@categories = Category.order(sort_order(:name)).paginate :page => params[:page]
+  		@categories = Category.order(sort_order(:id)).paginate :page => params[:page]
     end
 
     def show
