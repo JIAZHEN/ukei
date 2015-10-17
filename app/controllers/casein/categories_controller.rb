@@ -65,11 +65,13 @@ module Casein
     private
 
       def category_params
-        params.require(:category).permit(:name, :lft, :rgt, :parent_id)
+        params.require(:category).permit(:name, :lft, :rgt, :parent_id,
+         :name_cn, :context_cn, :bootsy_image_gallery_id)
       end
 
       def update_params
-        params.require(:category).permit(:name, :context, :bootsy_image_gallery_id)
+        params.require(:category).permit(:name, :context, :name_cn,
+         :context_cn, :bootsy_image_gallery_id)
       end
 
   end

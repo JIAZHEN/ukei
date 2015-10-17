@@ -6,5 +6,13 @@
     = casein_select f, f.object, :parent_id, @categories.map { |p| [ "#{p.level} - #{p.name}", p.id ] }, { include_blank: true }
 
 .row
+  .col-lg-6
+    = casein_text_field f, f.object, :name_cn
+
+.row
   .col-lg-12
     = casein_bootsy_area f, f.object, :context, cols: "30", rows: "10"
+
+.row
+  .col-lg-12
+    = casein_bootsy_area f, f.object, :context_cn, cols: "30", rows: "10"

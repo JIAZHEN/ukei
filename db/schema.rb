@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151011100846) do
+ActiveRecord::Schema.define(version: 20151017211536) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,6 +60,8 @@ ActiveRecord::Schema.define(version: 20151011100846) do
     t.integer  "parent_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "name_cn"
+    t.text     "context_cn"
   end
 
   add_index "categories", ["lft"], name: "index_categories_on_lft", using: :btree

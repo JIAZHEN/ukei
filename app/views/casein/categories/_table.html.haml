@@ -4,6 +4,7 @@
     %tr
       %th= casein_sort_link "Id", :id
       %th= casein_sort_link "Name", :name
+      %th= casein_sort_link "NameCN", :name
       %th= casein_sort_link "Level", :name
       %th= casein_sort_link "Parent", :parent_id
       %th  
@@ -11,6 +12,7 @@
     %tr
       %td= casein_table_cell_link category.id, casein_category_path(category)
       %td= casein_table_cell_link category.name, casein_category_path(category)
+      %td= casein_table_cell_link category.name_cn, casein_category_path(category)
       %td= casein_table_cell_link category.level, casein_category_path(category)
       %td= casein_table_cell_link category.parent.try(:name), casein_category_path(category)
       %td.delete
