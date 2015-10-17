@@ -3,13 +3,13 @@
     = image_tag("london_from_a_hot_air_balloon.jpg")
     .content.content-position.contain-padding
       %h1
-        %span= @category.name
+        %span= @category.public_send("name#{@attr_suffix}".to_sym)
 
 %section
   .contain-padding
     .row
       .col-md-8.text-detail
-        = @category.context.try(:html_safe)
+        = @category.public_send("context#{@attr_suffix}".to_sym).try(:html_safe)
 
       .col-md-4
         %h5

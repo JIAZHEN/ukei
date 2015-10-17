@@ -3,12 +3,12 @@
     = image_tag("london_from_a_hot_air_balloon.jpg")
     .content.content-position.contain-padding
       %h1
-        %span= @slogen.context
+        %span= @slogen.public_send("context#{@attr_suffix}".to_sym)
 
 .home-bg
   %section.intro
     .contain-padding
-      %p= @home_intro.context
+      %p= @home_intro.public_send("context#{@attr_suffix}".to_sym)
 
   %section#logo
     .contain-padding

@@ -59,7 +59,8 @@ module Casein
     private
 
       def page_content_params
-        params.require(:page_content).permit(:name, :image, :context, :bootsy_image_gallery_id)
+        params.require(:page_content).permit(:name, :image, :context,
+          :context_cn, :bootsy_image_gallery_id)
       end
 
   end

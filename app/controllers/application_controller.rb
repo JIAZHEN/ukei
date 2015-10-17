@@ -5,6 +5,9 @@ class ApplicationController < ActionController::Base
 
   before_action :load_categories
   before_action :load_logo
+  before_action :set_locale
+
+  CN_LOCALE = "zh-CN"
 
   def page_contents(*names)
     contents = PageContent.where("name IN (?)", names).all
@@ -17,5 +20,10 @@ class ApplicationController < ActionController::Base
 
   def load_logo
     @logo = PageContent.find_by(:name => "logo")
+  end
+
+  def set_locale
+    I18n.locale = params[:locale] || I18n.default_locale
+    @attr_suffix = "_cn" if params[:locale] == CN_LOCALE
   end
 end
