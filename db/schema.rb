@@ -16,21 +16,21 @@ ActiveRecord::Schema.define(version: 20151011100846) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "bootsy_image_galleries", force: true do |t|
+  create_table "bootsy_image_galleries", force: :cascade do |t|
     t.integer  "bootsy_resource_id"
     t.string   "bootsy_resource_type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "bootsy_images", force: true do |t|
+  create_table "bootsy_images", force: :cascade do |t|
     t.string   "image_file"
     t.integer  "image_gallery_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "casein_admin_users", force: true do |t|
+  create_table "casein_admin_users", force: :cascade do |t|
     t.string   "login",                           null: false
     t.string   "name"
     t.string   "email"
@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 20151011100846) do
     t.datetime "updated_at"
   end
 
-  create_table "categories", force: true do |t|
+  create_table "categories", force: :cascade do |t|
     t.string   "name"
     t.text     "context"
     t.integer  "lft"
@@ -67,7 +67,7 @@ ActiveRecord::Schema.define(version: 20151011100846) do
   add_index "categories", ["parent_id"], name: "index_categories_on_parent_id", using: :btree
   add_index "categories", ["rgt"], name: "index_categories_on_rgt", using: :btree
 
-  create_table "page_contents", force: true do |t|
+  create_table "page_contents", force: :cascade do |t|
     t.string   "name"
     t.string   "image"
     t.text     "context"
