@@ -37,7 +37,15 @@ namespace :db do
     end
 
     PageContent.create!(name: "slogen", context: "We design services for customers that have impact on business")
-    PageContent.create!(name: "home_intro", context: "RSB Solicitors is a London-based firm with a team of hugely experienced and professional advisers to help you deal with virtually any legal or business matter.\nAmong the services we offer are legal guidance and advice when dealing with business law, property acquisition and management, immigration, intellectual property, and accounting. We are also experts in helping non-resident Indians with a vast array of different objectives here in the UK.\nWe understand that when you seek advice on a legal or business matter, you are looking for a company which will provide you with accurate information, as well as affordable and intelligent solutions to your problems. At RSB we do just that. Your personal and business needs are at the forefront of our minds, and we take pride in assisting you efficiently and professionally.\nBeing based in London, we feel we are at the heart of the UK's business world, and are well situated to both advise you, and provide finance and accounting solutions.\nIf you would like to talk to one of our advisers about anything at all, please contact us today via telephone or e-mail and we will respond to your query as quickly as possible.")
+    PageContent.create!(name: "home_intro", context: "RSB Solicitors is a London-based firm with a team of hugely experienced and professional advisers to help you deal with virtually any legal or business matter.
+
+Among the services we offer are legal guidance and advice when dealing with business law, property acquisition and management, immigration, intellectual property, and accounting. We are also experts in helping non-resident Indians with a vast array of different objectives here in the UK.
+
+We understand that when you seek advice on a legal or business matter, you are looking for a company which will provide you with accurate information, as well as affordable and intelligent solutions to your problems. At RSB we do just that. Your personal and business needs are at the forefront of our minds, and we take pride in assisting you efficiently and professionally.
+
+Being based in London, we feel we are at the heart of the UK's business world, and are well situated to both advise you, and provide finance and accounting solutions.
+
+If you would like to talk to one of our advisers about anything at all, please contact us today via telephone or e-mail and we will respond to your query as quickly as possible.")
     PageContent.create!(name: "logo")
   end
 
