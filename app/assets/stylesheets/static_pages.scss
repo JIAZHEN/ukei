@@ -34,6 +34,10 @@ ul.nav.navbar-nav {
 .dropdown-submenu:hover>.dropdown-menu{display:block;}
 .dropdown-submenu.pull-left{float:none;}.dropdown-submenu.pull-left>.dropdown-menu{margin-left:10px;-webkit-border-radius:6px 6px 6px 6px;-moz-border-radius:6px 6px 6px 6px;border-radius:6px 6px 6px 6px;}
 
+.bg-china-desk {
+  background: url(china-desk) no-repeat center center; background-size: cover;
+}
+
 .banner {
   img {
     max-width: 100%;
