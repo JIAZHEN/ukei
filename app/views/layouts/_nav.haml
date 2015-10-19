@@ -9,7 +9,7 @@
       %a.navbar-brand{:href => root_path}
         = image_tag(@logo.image.url(:medium))
     .collapse.navbar-collapse
-      %ul.nav.navbar-nav
+      %ul.nav.navbar-nav.text-light
         - @categories.each do |category|
           - if category.children.empty?
             %li= link_to category.public_send("name#{@attr_suffix}".to_sym).upcase, category_path(category)

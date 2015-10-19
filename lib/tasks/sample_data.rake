@@ -1,8 +1,43 @@
 namespace :db do
   desc "Fill database with sample data"
   task populate: :environment do
+    categories = ["Sectors", "Services", "Join us", "About us"].map do |name|
+      Category.create!(name: name)
+    end
+
+    sectors = Category.find_by(name: "Sectors")
+    [
+      "IT and Telecommunication", "Retail and E-commerce", "Real Estate", "Hotels and Restaurants",
+      "Fashion", "Pharmaceuticals", "Healthcare",
+      "Social Housing", "Education"
+    ].each do |name|
+      Category.create!(name: name).move_to_child_of(sectors)
+    end
+
+    services = Category.find_by(name: "Services")
+    [
+      "Immigration", "Business Law", "Commercial", "Commercial Property",
+      "Commercial Dispute Resolution", "Corporate", "Employment", "Family",
+      "Intellectual Property", "IT and Telecommunication",
+      "Real Estate", "Regulatory Compliance"
+    ].each do |name|
+      Category.create!(name: name).move_to_child_of(services)
+    end
+
+    immigration = Category.find_by(name: "Immigration")
+    [
+      "T1 Entrepreneur Migrants",
+      "T1 Investor Migrants",
+      "T2 Intra – Company Transfer Migrants",
+      "T2 General", "T4 General Student", "T4 Child Student", "T5 Temporary Worker",
+      "Marrage, Civil Partner, Finance, Unmarried Partner Visa",
+      "Indefinite Leave To Remain", "British Citizenship"
+    ].each do |name|
+      Category.create!(name: name).move_to_child_of(immigration)
+    end
+
     PageContent.create!(name: "slogen", context: "We design services for customers that have impact on business")
-    PageContent.create!(name: "home_intro", context: "Welcome. Over the last 14 years we have pioneered service design and made a difference for customers and organisations. We merge creativity, design and business to help organisations deliver a great customer experience and achieve tangible business results.")
+    PageContent.create!(name: "home_intro", context: "RSB Solicitors is a London-based firm with a team of hugely experienced and professional advisers to help you deal with virtually any legal or business matter.\nAmong the services we offer are legal guidance and advice when dealing with business law, property acquisition and management, immigration, intellectual property, and accounting. We are also experts in helping non-resident Indians with a vast array of different objectives here in the UK.\nWe understand that when you seek advice on a legal or business matter, you are looking for a company which will provide you with accurate information, as well as affordable and intelligent solutions to your problems. At RSB we do just that. Your personal and business needs are at the forefront of our minds, and we take pride in assisting you efficiently and professionally.\nBeing based in London, we feel we are at the heart of the UK's business world, and are well situated to both advise you, and provide finance and accounting solutions.\nIf you would like to talk to one of our advisers about anything at all, please contact us today via telephone or e-mail and we will respond to your query as quickly as possible.")
     PageContent.create!(name: "logo")
   end
 

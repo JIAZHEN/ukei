@@ -1,36 +1,38 @@
-%footer.footer
+%footer.footer.text-light
   .contain-padding
     .row
-      .col-lg-4.col-md-6
+      .col-lg-3.col-md-6
         %ul
           %li
-            %a{:href => contact_path}
-              %h5 CONTACT US
+            %h5= link_to "SERVICES", category_path(@services)
+          - @services.children.sort.each do |first_tier|
+            %li= link_to first_tier.public_send("name#{@attr_suffix}".to_sym), category_path(first_tier)
+      .col-lg-3.col-md-6
+        %ul
+          %li
+            %h5= link_to "SECTORS", category_path(@sectors)
+          - @sectors.children.sort.each do |first_tier|
+            %li= link_to first_tier.public_send("name#{@attr_suffix}".to_sym), category_path(first_tier)
+      .col-lg-3.col-md-6
+        %ul
+          %li
+            %h5
+              %a{:href => contact_path} CONTACT US
           %li
             %a{:href => "mailto:info@ukei.com", :title => "Send an e-mail to UKEI"} info@ukei.com
           %br/
-
-          %li
-            %address
-              %strong RSB Solictors
-              %br/
-              44 Bishopsgate, London
-              %br/
-              EC2N 4AJ
-              %br/
-              United Kingdom
-              %br/
-              %abbr{:title => "Phone"} P:
-              (123) 456-7890
-
-
-      .col-lg-4.col-md-6
-        %ul
           %li
             %h5= link_to "LOCATION", location_path("london")
-          %li= link_to "London", location_path("london")
+            %address
+              RSB Solictors
+              %br/
+              Unit 109, Cremer business centre
+              %br/
+              37 Cremer Street, London
+              %br/
+              E2 8HD
 
-      .col-lg-4.col-md-6
+      .col-lg-3.col-md-6
         %ul
           %li
             %h5 CONNECT

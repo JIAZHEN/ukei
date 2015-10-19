@@ -6,9 +6,9 @@
         %span= @slogen.public_send("context#{@attr_suffix}".to_sym)
 
 .home-bg
-  %section.intro
+  %section
     .contain-padding
-      %p= @home_intro.public_send("context#{@attr_suffix}".to_sym)
+      %p.intro.text-light= @home_intro.public_send("context#{@attr_suffix}".to_sym).html_safe
 
   %section#logo
     .contain-padding

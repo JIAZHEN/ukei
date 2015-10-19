@@ -16,6 +16,8 @@ class ApplicationController < ActionController::Base
 
   def load_categories
     @categories = Category.where(:parent_id => nil).order(:id => :asc).all
+    @services = @categories.find{|category| category.name == "Services"}
+    @sectors = @categories.find{|category| category.name == "Sectors"}
   end
 
   def load_logo

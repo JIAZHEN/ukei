@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 * {
-  font-family: "Open+Sans";
+  font-family: sans-serif;
 }
 
 .contain-padding {
@@ -26,7 +26,9 @@ ul.nav.navbar-nav {
 .navbar-brand {
   padding-top: 0px;
 }
-
+.dropdown-menu>li>a {
+  font-weight: lighter;
+}
 .dropdown-submenu {position:relative;}
 .dropdown-submenu>.dropdown-menu{top:0;left:100%;max-width:300px;overflow:scroll;margin-top:-6px;margin-right:-1px;-webkit-border-radius:6px 6px 6px 6px;-moz-border-radius:6px 6px 6px 6px;border-radius:6px 6px 6px 6px;}
 .dropdown-submenu:hover>.dropdown-menu{display:block;}
@@ -47,7 +49,7 @@ ul.nav.navbar-nav {
   }
 
   .content {
-    bottom: 40%;
+    bottom: 50%;
 
     h2 {
       span {
@@ -59,7 +61,7 @@ ul.nav.navbar-nav {
 
     h1 {
       font-weight: normal;
-      font-size: 70px;
+      font-size: 60px;
       line-height: 1.29em;
 
       span {
@@ -77,10 +79,14 @@ ul.nav.navbar-nav {
 
 .intro {
   color: #444444;
-  font-size: 30px;
+  font-size: 18px;
   padding-top: 3%;
   padding-bottom: 3%;
-  line-height: 1.6;
+  line-height: 1.4;
+}
+
+.text-light {
+  font-weight: lighter;
 }
 
 .text-detail {
@@ -123,10 +129,12 @@ ul.nav.navbar-nav {
   line-height: 1.6;
   background-color: #E8E8E8;
   padding-top: 2%;
-  font-size: 17px;
   ul {
     padding-left: 0;
     list-style: none;
+    li {
+      font-size: 14px;
+    }
   }
   a {
     color: #444444;
