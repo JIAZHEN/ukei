@@ -11,11 +11,10 @@
       .col-md-8.text-detail.text-light
         = @category.public_send("context#{@attr_suffix}".to_sym).try(:html_safe)
 
-      .col-md-4
-        %h5
-          CONTACT DETAILS
+      .col-md-4.side-text.text-light
+        %h5 Contact details
         %address
-          %strong RSB Solictors
+          RSB Solictors
           %br/
           Unit 109, Cremer business centre
           %br/
@@ -23,9 +22,13 @@
           %br/
           E2 8HD
 
-        %h5
-          CONTACT
+        %h5 Phone number
+        %address
+          020 3092 5345
 
-        %strong Full Name
-        %br/
-        %a{:href => "mailto:#"} first.last@example.com
+        %h5 Email
+        = mail_to "info@rsbsolicitors.co.uk"
+
+        %h5 Wechat
+        %address
+          TL07873963102

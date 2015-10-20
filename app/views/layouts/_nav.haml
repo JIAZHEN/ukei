@@ -32,3 +32,10 @@
                             %li= link_to second_tier.public_send("name#{@attr_suffix}".to_sym).upcase, category_path(second_tier)
         %li= link_to "CHINA DESK", china_desk_path
         %li= link_to "CONTACT", contact_path
+
+:javascript
+  $(".dropdown-hover").hover((function() {
+    return $(this).toggleClass("open");
+  }), function() {
+    return $(this).toggleClass("open");
+  });
