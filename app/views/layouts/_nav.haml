@@ -21,15 +21,15 @@
                 %ul.dropdown-menu
                   - category.children.sort.each do |first_tier|
                     - if first_tier.children.empty?
-                      %li= link_to first_tier.public_send("name#{@attr_suffix}".to_sym).try(:upcase), category_path(first_tier)
+                      %li= link_to first_tier.public_send("name#{@attr_suffix}".to_sym).try(:capitalize), category_path(first_tier)
                     - else
                       %li.dropdown-submenu.dropdown-menu-right
                         %a
-                          = first_tier.public_send("name#{@attr_suffix}".to_sym).try(:upcase)
+                          = first_tier.public_send("name#{@attr_suffix}".to_sym).try(:capitalize)
                           %i.fa.fa-caret-right
                         %ul.dropdown-menu.dropdown-hover
                           - first_tier.children.sort.each do |second_tier|
-                            %li= link_to second_tier.public_send("name#{@attr_suffix}".to_sym).try(:upcase), category_path(second_tier)
+                            %li= link_to second_tier.public_send("name#{@attr_suffix}".to_sym).try(:capitalize), category_path(second_tier)
         %li= link_to t("china_desk").upcase, china_desk_path
         %li= link_to t("contact").upcase, contact_path
 
