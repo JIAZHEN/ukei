@@ -36,7 +36,7 @@ namespace :db do
       Category.create!(name: name).move_to_child_of(immigration)
     end
 
-    PageContent.create!(name: "slogen", context: "We design services for customers that have impact on business")
+    PageContent.create!(name: "slogen", context: "Keep calm and we are here")
     PageContent.create!(name: "home_intro", context: "RSB Solicitors is a London-based firm with a team of hugely experienced and professional advisers to help you deal with virtually any legal or business matter.
 
 Among the services we offer are legal guidance and advice when dealing with business law, property acquisition and management, immigration, intellectual property, and accounting. We are also experts in helping non-resident Indians with a vast array of different objectives here in the UK.
