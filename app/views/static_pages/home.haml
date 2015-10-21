@@ -8,6 +8,6 @@
 .home-bg
   %section
     .contain-padding
-      %p.intro.text-light= @home_intro.public_send("context#{@attr_suffix}".to_sym).html_safe
+      %p.intro.text-light= @home_intro.public_send("context#{@attr_suffix}".to_sym).try(:html_safe)
       %br
       %br

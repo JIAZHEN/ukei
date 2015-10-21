@@ -4,25 +4,25 @@
       .col-lg-3.col-md-6
         %ul
           %li
-            %h5= link_to "SERVICES", category_path(@services)
+            %h5= link_to t("services").upcase, category_path(@services)
           - @services.children.sort.each do |first_tier|
             %li= link_to first_tier.public_send("name#{@attr_suffix}".to_sym), category_path(first_tier)
       .col-lg-3.col-md-6
         %ul
           %li
-            %h5= link_to "SECTORS", category_path(@sectors)
+            %h5= link_to t("sectors").upcase, category_path(@sectors)
           - @sectors.children.sort.each do |first_tier|
             %li= link_to first_tier.public_send("name#{@attr_suffix}".to_sym), category_path(first_tier)
       .col-lg-3.col-md-6
         %ul
           %li
             %h5
-              %a{:href => contact_path} CONTACT US
+              %a{:href => contact_path}= t("contact_us").upcase
           %li
             %a{:href => "mailto:info@rsbsolicitors.co.uk", :title => "Send an e-mail to UKEI"} info@rsbsolicitors.co.uk
           %br/
           %li
-            %h5= link_to "LOCATION", location_path("london")
+            %h5= link_to t("location").upcase, location_path("london")
             %address
               RSB Solictors
               %br/
@@ -34,20 +34,20 @@
               %br/
               020 3092 5345
           %li
-            %h5 WECHAT
+            %h5= t("wechat").upcase
             TL07873963102
 
       .col-lg-3.col-md-6
         %ul
           %li
-            %h5 CONNECT
+            %h5= t("connect").upcase
           %li= link_to "Wechat"
           %li= link_to "Weibo"
           %li= link_to "Facebook"
           %li= link_to "Linkedin"
 
           %li
-            %h5 SOCIAL
+            %h5= t("social").upcase
           %li
             .row
               .col-md-2
