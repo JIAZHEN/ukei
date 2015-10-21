@@ -6,8 +6,8 @@
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
-      %a.navbar-brand{:href => root_path}
-        = image_tag(@logo.image.url(:medium))
+      %a.navbar-brand.logo-padding{:href => root_path}
+        = image_tag(@logo.image.url, :size => "255x123")
     .collapse.navbar-collapse
       %ul.nav.navbar-nav.text-light
         - @categories.each do |category|

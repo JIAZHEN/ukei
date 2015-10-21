@@ -10,6 +10,7 @@
     .row
       .col-md-8.text-detail.text-light
         = @category.public_send("context#{@attr_suffix}".to_sym).try(:html_safe)
+        %br
 
       .col-md-4.side-text.text-light
         %h5 CONTACT DETAILS

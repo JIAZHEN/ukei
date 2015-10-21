@@ -22,6 +22,9 @@ ul.nav.navbar-nav {
     }
   }
 }
+.logo-padding {
+  padding: 0 10px;
+}
 
 .navbar-brand {
   padding-top: 0px;
@@ -64,7 +67,7 @@ ul.nav.navbar-nav {
     }
 
     h1 {
-      font-weight: normal;
+      font-weight: bold;
       font-size: 50px;
       line-height: 1.29em;
 
@@ -143,6 +146,10 @@ ul.nav.navbar-nav {
   a {
     color: #444444;
   }
+}
+
+.fa-grey {
+  color: #808080;
 }
 
 .footer_copy {
