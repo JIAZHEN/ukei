@@ -65,13 +65,13 @@ ul.nav.navbar-nav {
 
     h1 {
       font-weight: normal;
-      font-size: 60px;
+      font-size: 50px;
       line-height: 1.29em;
 
       span {
         background-color: rgba(255,255,255,0.8);
         color: #000000;
-        padding: 3.5px;
+        padding: 2.5px;
         font-family: "Aleo-Light"
       }
     }
@@ -85,8 +85,7 @@ ul.nav.navbar-nav {
 .intro {
   color: #444444;
   font-size: 18px;
-  padding-top: 3%;
-  padding-bottom: 3%;
+  padding-top: 5%;
   line-height: 1.4;
   white-space: pre-line;
 }
@@ -99,6 +98,7 @@ ul.nav.navbar-nav {
   color: #000000;
   font-size: 18px;
   line-height: 1.6;
+  padding-top: 30px;
 }
 
 .text-normal {
@@ -157,7 +157,7 @@ ul.nav.navbar-nav {
       margin-right: 2%;
       display: inline;
       a {
-        font-size: 17px;
+        font-size: 13px;
       }
     }
   }

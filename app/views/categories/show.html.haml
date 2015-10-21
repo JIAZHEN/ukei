@@ -12,7 +12,7 @@
         = @category.public_send("context#{@attr_suffix}".to_sym).try(:html_safe)
 
       .col-md-4.side-text.text-light
-        %h5 Contact details
+        %h5 CONTACT DETAILS
         %address
           RSB Solictors
           %br/
@@ -22,15 +22,15 @@
           %br/
           E2 8HD
 
-        %h5 Phone number
+        %h5 PHONE NUMBER
         %address
           020 3092 5345
 
-        %h5 Email
+        %h5 EMAIL
         = mail_to "info@rsbsolicitors.co.uk"
 
-        %h5 Wechat
+        %h5 WECHAT
         %address
           TL07873963102
 
-        %img{:alt => "RSB", :src => "https://chart.googleapis.com/chart?cht=qr&chl=rsbsolicitors.co.uk&chs=180x180&choe=UTF-8&chld=L|2"}
+        = image_tag("qr-code.jpg", :size => "181x181", :alt => "RSB")
