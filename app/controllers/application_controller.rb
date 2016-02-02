@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_action :load_categories
-  before_action :load_logo
+  before_action :load_contents
   before_action :set_locale
 
   CN_LOCALE = "zh-CN"
@@ -20,8 +20,8 @@ class ApplicationController < ActionController::Base
     @sectors = @categories.find{|category| category.name == "Sectors"}
   end
 
-  def load_logo
-    @logo = PageContent.find_by(:name => "logo")
+  def load_contents
+    page_contents("logo", "landline", "mobile", "address")
   end
 
   def set_locale

@@ -26,13 +26,11 @@
             %address
               RSB Solictors
               %br/
-              Unit 109, Cremer business centre
+              = @address.context
               %br/
-              37 Cremer Street, London
+              = "T: #{@landline.context}"
               %br/
-              E2 8HD
-              %br/
-              020 3092 5345
+              = "M: #{@mobile.context}"
           %li
             %h5= t("wechat").upcase
             TL07873963102
